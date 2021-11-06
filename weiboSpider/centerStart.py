@@ -12,7 +12,7 @@ def job():
 
 
 if __name__ == '__main__':
-    job()
+    # job()
     schedule.every().hour.at(":00").do(job)
     while True:
         schedule.run_pending()

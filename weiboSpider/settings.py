@@ -71,6 +71,7 @@ SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.PriorityQueue'
 ITEM_PIPELINES = {
     # 'scrapy_redis.pipelines.RedisPipeline': 300,
     'weiboSpider.pipelines.HotSearchPipeline': 100,
+    'weiboSpider.pipelines.BlogPipeline': 100,
 }
 
 DOWNLOADER_MIDDLEWARES = {

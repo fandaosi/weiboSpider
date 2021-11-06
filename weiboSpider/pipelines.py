@@ -23,6 +23,7 @@ class HotSearchPipeline:
 class BlogPipeline:
     def process_item(self, item, spider):
         if spider.name == 'blog':
+            print("dddddddddddddddddddddddd")
             mysql = MysqlUtil()
             mysql.save_mblog(item)
 

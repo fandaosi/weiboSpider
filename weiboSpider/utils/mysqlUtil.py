@@ -28,7 +28,7 @@ class MysqlUtil:
 
     def save_mblog(self, item):  # 存储微博
         self.__session.add(
-            Mblog(item["mid"], item["text_raw"], item["user_id"], item["created_at"], item["captured_at"],
+            Mblog(item["mblogid"], item["text_raw"], item["user_id"], item["created_at"], item["captured_at"],
                   item["comments_count"], item["reposts_count"], item["screen_name"], item["attitudes_count"],
                   item["keyword"]))
         self.__session.commit()
