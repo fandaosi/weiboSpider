@@ -14,7 +14,6 @@ class HotSearchPipeline:
                 mysql.save_hot_search(item)
 
             if type(item).__name__ == 'PageItem':
-                print("ddddddddddddddddddddddd")
                 url = data_process.get_bloglist_url(item['url'])
                 redis.add_blog_url(url)
 

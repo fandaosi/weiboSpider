@@ -78,14 +78,13 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 COOKIES_ENABLED = True
-# LOG_LEVEL = "DEBUG"
-# TODAY = datetime.datetime.now()
-# LOG_FILE = 'log/scrapy_{}_{}_{}.log'.format(TODAY.year, TODAY.month, TODAY.day)
-COOKIES_DEBUG = True
+LOG_LEVEL = "DEBUG"
+TODAY = datetime.datetime.now()
+LOG_FILE = 'log/scrapy_{}_{}_{}.log'.format(TODAY.year, TODAY.month, TODAY.day)
 HTTPERROR_ALLOWED_CODES = [302]
 
 DOWNLOAD_DELAY = 1
-DOWNLOAD_TIMEOUT = 20
+DOWNLOAD_TIMEOUT = 30
 
 # mysql
 MYSQL_HOST = 'rm-bp12m4ql9t8189tjo7o.mysql.rds.aliyuncs.com'

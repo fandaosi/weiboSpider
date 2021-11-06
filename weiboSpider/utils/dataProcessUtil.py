@@ -32,9 +32,9 @@ class DataProcessUtil:
         return 'https://s.weibo.com/realtime?q={}&tw=realtime&Refer=weibo_realtime'.format(
             urllib.parse.quote("#{}#".format(word)))
 
-    def get_bloglist_url(self, url):
+    def get_bloglist_url(self, url):  # 获取微博列表链接
         return "https://s.weibo.com{}".format(url)
 
-    def get_blog_url(self, blog_url):
+    def get_blog_url(self, blog_url):  # 获取微博链接
         mblogid = urlparse(blog_url).path.split("/")[-1]
         return "https://weibo.com/ajax/statuses/show?id={}".format(mblogid)

@@ -1,6 +1,5 @@
-import redis, threading
+import redis
 from weiboSpider.settings import *
-from weiboSpider.utils.dataProcessUtil import DataProcessUtil
 
 
 class RedisUtil:
