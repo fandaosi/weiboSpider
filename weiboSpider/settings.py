@@ -56,10 +56,10 @@ USER_AGENT = random.choice(USER_AGENTS)
 ROBOTSTXT_OBEY = False
 
 # 调度器启用Redis存储Requests队列
-SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+SCHEDULER = "scrapy_redis_bloomfilter.scheduler.Scheduler"
 
-# 确保所有的爬虫实例使用Redis进行重复过滤
-DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+# 布隆过滤器
+DUPEFILTER_CLASS = "scrapy_redis_bloomfilter.dupefilter.RFPDupeFilter"
 
 # 将Requests队列持久化到Redis，可支持暂停或重启爬虫
 SCHEDULER_PERSIST = True
@@ -71,7 +71,6 @@ SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.PriorityQueue'
 ITEM_PIPELINES = {
     # 'scrapy_redis.pipelines.RedisPipeline': 300,
     'weiboSpider.pipelines.HotSearchPipeline': 100,
-    'weiboSpider.pipelines.PagePipeline': 200,
 }
 
 DOWNLOADER_MIDDLEWARES = {

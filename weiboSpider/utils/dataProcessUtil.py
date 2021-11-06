@@ -1,4 +1,5 @@
-import re, time, urllib.parse, datetime, threading
+import time, urllib.parse, datetime
+from urllib.parse import urlparse
 
 
 class DataProcessUtil:
@@ -15,11 +16,11 @@ class DataProcessUtil:
             return None
         return time.strftime('%Y-%m-%d %H:%M:%S', time.strptime(created_at, '%a %b %d %H:%M:%S %z %Y'))
 
-    # def get_keyword(self, url):  # 从url中获取关键词
-    #     query = urllib.parse.urlparse(url).query
-    #     params = urllib.parse.parse_qs(query)
-    #     url = params["containerid"][0]
-    #     return re.findall('&q=.*?&t=', url)[0][3:-3]
+    def get_keyword(self, url):  # 从url中获取关键词
+        query = urllib.parse.urlparse(url).query
+        params = urllib.parse.parse_qs(query)
+        keyword = params['q'][0]
+        return keyword
 
     def get_captured_at(self):  # 获取爬取时的时间
         return datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -33,3 +34,7 @@ class DataProcessUtil:
 
     def get_bloglist_url(self, url):
         return "https://s.weibo.com{}".format(url)
+
+    def get_blog_url(self, blog_url):
+        mblogid = urlparse(blog_url).path.split("/")[-1]
+        return "https://weibo.com/ajax/statuses/show?id={}".format(mblogid)

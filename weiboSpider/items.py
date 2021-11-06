@@ -18,3 +18,16 @@ class HotSearchItem(scrapy.Item):
 
 class PageItem(scrapy.Item):
     url = scrapy.Field()
+
+
+class BlogItem(scrapy.Item):
+    mblogid = scrapy.Field()  # id
+    text_raw = scrapy.Field()  # 内容
+    user_id = scrapy.Field()  # 用户id
+    created_at = scrapy.Field()  # 发布时间
+    captured_at = scrapy.Field()  # 捕获时间
+    comments_count = scrapy.Field()  # 评论数
+    reposts_count = scrapy.Field()  # 转发数
+    screen_name = scrapy.Field()  # 用户名
+    attitudes_count = scrapy.Field()  # 点赞数
+    keyword = scrapy.Field()  # 关键词
