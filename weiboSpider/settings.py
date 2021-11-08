@@ -70,8 +70,8 @@ SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.PriorityQueue'
 # 将爬取到的items保存到Redis 以便进行后续处理
 ITEM_PIPELINES = {
     # 'scrapy_redis.pipelines.RedisPipeline': 300,
-    'weiboSpider.pipelines.HotSearchPipeline': 100,
-    'weiboSpider.pipelines.BlogPipeline': 100,
+    'weiboSpider.pipelines.HotSearchPipeline': 200,
+    'weiboSpider.pipelines.BlogPipeline': 200,
 }
 
 DOWNLOADER_MIDDLEWARES = {

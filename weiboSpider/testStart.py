@@ -4,14 +4,18 @@
 import urllib.parse
 
 from scrapy import cmdline
-# args = "scrapy runspider spiders/hotsearch.py".split()
-# cmdline.execute(args)
+
+from weiboSpider.utils.redisUtil import RedisUtil
+RedisUtil().add_hotsearch_url()
+args = "scrapy runspider spiders/hotsearch.py".split()
+cmdline.execute(args)
 
 # args = "scrapy runspider spiders/blog.py".split()
 # cmdline.execute(args)
 
 # args = "scrapy crawl test".split()
 # cmdline.execute(args)
+
 
 # from datetime import datetime, timedelta
 # from scrapy.crawler import CrawlerProcess
@@ -34,6 +38,8 @@ from scrapy import cmdline
 #         delay = (target_time - datetime.now()).total_seconds()
 #         time.sleep(delay)
 #
+
+
 
 
 

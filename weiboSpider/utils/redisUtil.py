@@ -13,3 +13,8 @@ class RedisUtil:
 
     def add_blog_url(self, url):  # 添加微博页面列表的地址
         self.__r.lpush('blog:start_urls', url)
+
+    def add_hotsearch_url(self):  # 添加微博页面列表的地址
+        self.__r.lpush('hotsearch:start_urls', 'https://weibo.com/ajax/side/hotSearch')
+
+

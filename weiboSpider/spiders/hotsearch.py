@@ -1,14 +1,13 @@
-import scrapy, json
+import json
 from scrapy import Request
-
+from scrapy_redis.spiders import RedisSpider
 from weiboSpider.utils.dataProcessUtil import DataProcessUtil
 from weiboSpider.items import HotSearchItem, PageItem
 
 
-class HotsearchSpider(scrapy.Spider):
+class HotsearchSpider(RedisSpider):
     name = 'hotsearch'
-    allowed_domains = ['weibo.com']
-    start_urls = ['https://weibo.com/ajax/side/hotSearch']
+    redis_key = 'hotsearch:start_urls'
 
     def parse(self, response):
         response = json.loads(response.text)
@@ -25,7 +24,7 @@ class HotsearchSpider(scrapy.Spider):
                 item["hot_rank"] = hot_search["rank"]
                 item["captured_at"] = captured_at
                 yield item
-                yield Request(data_process.get_page_url(item['word']), callback=self.prase_page,dont_filter=True)
+                yield Request(data_process.get_page_url(item['word']), callback=self.prase_page, dont_filter=True)
             except KeyError:
                 continue
 
@@ -35,3 +34,4 @@ class HotsearchSpider(scrapy.Spider):
             item = PageItem()
             item['url'] = url
             yield item
+
