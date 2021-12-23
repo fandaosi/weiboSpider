@@ -19,7 +19,7 @@
 可以通过
 
 ```bash
-git clone https://github.com/fandaosi/WeiboSpiders_center
+git clone https://github.com/fandaosi/WeiboSpiders
 ```
 
 或直接下载获取源码
@@ -108,13 +108,14 @@ docker run --name weibospiders_sub -e type="sub"  weibospider
 # 三、查看结果
 
 热搜榜存储于Mysql的hotsearch表中，获取的微博则存于mblog表中。
+hotsearch的表信息如下表所示。
 
-| 字段名   | mid    | captured_at  | hot_rank | onboard_time | num    | category | word |
-| -------- | ------ | ------------ | -------- | ------------ | ------ | -------- | ---- |
-| 实际意义 | 热搜id | 爬取到的时间 | 热搜排名 | 上榜时间     | 热度值 | 类别     | 内容 |
+| 字段名   |   mid   |   word   |   category   |   num   |   onboard_time   |   hot_rank   |   captured_at   |
+| -------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| 实际意义 |   热搜id   |   热搜内容   |   热搜分类   |   热度   |   上榜时间   |   排名   |   热搜捕获时间   |
 
-Mysql的表信息如下表所示
+mblog的表信息如下表所示。
 
-| 字段名   |      |      |      |      |      |      |      |      |      |
-| -------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| 实际意义 |      |      |      |      |      |      |      |      |      |
+| 字段名   |   mblogid   |   text_raw   |   user_id   |   created_at   |   captured_at   |   comments_count   |   reposts_count   |   screen_name   |   attitudes_count   |keyword|
+| -------- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |---- |
+| 实际意义 |   微博id   |   微博内容   |   用户id   |   微博发送时间   |   微博捕获时间   |   评论数   |   转发数   |   用户名   |   点赞数   |  捕获时关联的热搜  |
