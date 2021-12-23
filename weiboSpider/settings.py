@@ -88,22 +88,22 @@ DOWNLOAD_DELAY = 1
 DOWNLOAD_TIMEOUT = 30
 
 # mysql
-MYSQL_HOST = 'rm-bp12m4ql9t8189tjo7o.mysql.rds.aliyuncs.com'
+MYSQL_HOST = 'localhost'
 MYSQL_PORT = 3306
-MYSQL_USERNAME = 'fandaosi'
-MYSQL_PASSWORD = 'Yeweirui0415'
+MYSQL_USERNAME = 'root'
+MYSQL_PASSWORD = 'admin'
 MYSQL_DATABASE = 'weibo'
 
 # mongdb
-MONGO_HOST = '101.35.150.102'
+MONGO_HOST = 'localhost'
 MONGO_PORT = 27017
 MONGO_USERNAME = 'admin'
-MONGO_PASSWORD = 'Yeweirui0415'
+MONGO_PASSWORD = 'admin'
 MONGO_DATABASE = 'weibo'
 
 # redis
-REDIS_HOST = 'r-bp14mvhslkzqn4q8kupd.redis.rds.aliyuncs.com'
+REDIS_HOST = 'localhost'
 REDIS_PORT = 6379
 REDIS_PARAMS = {
-    'password': 'Yeweirui0415',
+    'password': 'admin',
 }
