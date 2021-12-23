@@ -12,14 +12,14 @@
 可以通过
 
 ```bash
-git clone https://github.com/fandaosi/WeiboSpiders
+git clone https://github.com/fandaosi/WeiboSpider
 ```
 
 或直接下载获取源码
 
 ## 2.修改配置文件
 
-进入 WeiboSpiders_center/settings.py，将对应的IP地址、端口号、用户名、密码修改为你自己的。
+进入 WeiboSpider/settings.py，将对应的IP地址、端口号、用户名、密码修改为你自己的。
 
 ```python
 # mysql
